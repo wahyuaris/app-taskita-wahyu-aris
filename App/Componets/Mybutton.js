@@ -9,10 +9,10 @@ const onBtnPress = ()=>{
     alert('asdf')
 }
 
-export const PrimaryButton = ({customeStyle={}})=>{
+export const PrimaryButton = ({title="",customeStyle={}})=>{
     return (
         <TouchableOpacity onPress={onBtnPress} style={[style.btnPrimary, customeStyle]}>
-            <Text style={{ color:'white'}}>LOGIN</Text>
+            <Text style={{ color:'white'}}>{title}</Text>
         </TouchableOpacity>
     )
 }
