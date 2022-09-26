@@ -22,7 +22,8 @@
     "react-native-screens": "^3.17.0",
     "react-navigation": "^4.4.4",
     "expo-app-loading": "~2.1.0",
-    "expo-font": "~10.2.0"
+    "expo-font": "~10.2.0",
+    "expo-linear-gradient": "~11.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

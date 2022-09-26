@@ -1,60 +1,63 @@
 import * as React from 'react';
-import {View,
-     Text, 
-     SafeAreaView, 
-     StyleSheet,
-      TextInput , 
-      StatusBar, 
-      Button, 
-     TouchableOpacity} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import {
-    IconMail,
-    IconLock
-} from '../../assets'
+    View,
+    Text, 
+    SafeAreaView, 
+    StyleSheet,
+    TextInput , 
+    StatusBar, 
+    Image
+} from 'react-native';
+import {
+    IconGmail,
+    IconFacebook,
+    IconTwitter
+} from '../../assets';
+import {
+    PrimaryButton
+} from '../../Componets'
 
-const onPress=()=>{
-    alert('asdf')
-}
 
 export default LoginScreen =  () => {
 
-    const LoginButton = ()=>{
-        return (
-        
-            <View style={{
-                borderRadius:40,
-                marginTop:10,
-                padding:15,
-                alignItems:'center',
-                backgroundColor:'#A03E82'
-            }}>
-                <Text style={{ color:'white'}}>LOGIN</Text>
-            </View>
-        
-        )
-    }
-
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar
-                barStyle="light-content"
-                animated={true}
-                backgroundColor="#131B63" />
+        <SafeAreaView style={{ flex:1 }}>
+            <LinearGradient
+                colors={['#131B63', '#481162']}
+                style={styles.container}>
+                <StatusBar
+                    barStyle="light-content"
+                    animated={true}
+                    backgroundColor="#131B63" />
 
-            <Text style={styles.HeaderText}>Login</Text>
-            <Text style={styles.BodyText}>Please login to your account</Text>
-            <TextInput 
-                style={styles.inputStyle} 
-                placeholder="useless placeholder"
-                inlineImageLeft='IconMail'
-            />
-            <TextInput style={styles.inputStyle} placeholder="useless dddd"/>
-            
+                <Text style={styles.HeaderText}>Login</Text>
+                <Text style={styles.BodyText}>Please login to your account</Text>
+                <TextInput 
+                    style={[styles.inputStyle, {marginTop:80}]} 
+                    placeholder="Email"
+                />
+                <TextInput style={styles.inputStyle} placeholder="Password"/>
 
-            <TouchableOpacity onPress={onPress}>
-                <LoginButton/>
-            </TouchableOpacity>
+                <PrimaryButton customeStyle={styles.btnLoginStyle}/>
 
+                <Text style={styles.smallText}>Forgot Password ?</Text>
+                <Text style={styles.smallTextCenter}>Or login with</Text>
+                <View style={styles.loginOption}>
+                    <Image source={IconGmail} style={styles.imgLoginIcon}/>
+                    <Image source={IconFacebook}  style={styles.imgLoginIcon}/>
+                    <Image source={IconTwitter}  style={styles.imgLoginIcon}/>
+                </View>
+
+                <View style={styles.footherText}>
+                    <Text style={styles.smallFootherText}>Don't have an account?</Text>
+                    <Text style={styles.smallFootherTextRight}>Create new now!</Text>
+                </View>
+                <View style={styles.footherTextTwo}>
+                    <Text style={styles.smallFootherText}>By signing up, you are agree with our </Text>
+                    <Text style={styles.smallFootherTextRight}>Terms & Conditions</Text>
+                </View>
+            </LinearGradient>
         </SafeAreaView>
     );
 }
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
     BodyText:{
         marginTop:10,
         fontSize:18,
-       fontFamily:'Roboto-Light',
+        fontFamily:'Roboto-Bold',
         color:'white'
     },
     inputStyle:{
@@ -89,5 +92,51 @@ const styles = StyleSheet.create({
         paddingTop:10,
         paddingBottom:10,
         backgroundColor:'#695D91'
+    },
+    btnLoginStyle:{
+        marginTop:40,
+    },
+    smallText:{
+        fontFamily:'Roboto-Light',
+        fontSize:14,
+        marginTop:12,
+        color:'white',
+        textAlign:'right'
+    },
+    smallTextCenter:{
+        fontFamily:'Roboto-Light',
+        fontSize:14,
+        marginTop:50,
+        color:'white',
+        textAlign:'center'
+    },
+    loginOption:{
+        justifyContent:'center',
+        flexDirection:'row'
+    },
+    imgLoginIcon:{
+      margin:10
+    },
+    footherText:{
+        flexDirection:'row',
+        justifyContent:'center',
+        marginTop:50
+    },
+    smallFootherText:{
+        fontFamily:'Roboto-Light',
+        fontSize:12,
+        color:'white',
+    },
+    smallFootherTextRight:{
+        fontFamily:'Roboto-Light',
+        fontSize:12,
+        color:'white',
+        marginLeft:5,
+        textDecorationLine:'underline'
+    },
+    footherTextTwo:{
+        flexDirection:'row',
+        justifyContent:'center',
+        marginTop:20
     }
 });
