@@ -5,14 +5,15 @@ import {
   SplashScreen, 
   LoginScreen,
   RegisterScreen,
-  RegisterSuccessScreen
+  RegisterSuccessScreen,
+  RegisterErrorScreen
 } from './Pages';
 
 const Stack = createStackNavigator();
 
 export default Router = () => {
   return (
-    <Stack.Navigator initialRouteName="RegisterSuccessScreen">
+    <Stack.Navigator initialRouteName="RegisterErrorScreen">
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen
         name="SplashScreen"
@@ -22,6 +23,7 @@ export default Router = () => {
        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}} />
        <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{headerShown: false}} />
        <Stack.Screen name="RegisterSuccessScreen" component={RegisterSuccessScreen} options={{headerShown: false}} />
+       <Stack.Screen name="RegisterErrorScreen" component={RegisterErrorScreen} options={{headerShown: false}} />
     </Stack.Navigator>
   );
 };

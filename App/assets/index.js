@@ -4,7 +4,8 @@ import IconLock from './img/Icon-lock.png';
 import IconGmail from './img/gmail.png';
 import IconFacebook from './img/facebook.png';
 import IconTwitter from './img/twitter.png';
-import AlertSuccess from './img/alert-success.png'
+import AlertSuccess from './img/alert-success.png';
+import AlertError from './img/alert-error.png';
 
 export {
     IconSplash,
@@ -13,5 +14,6 @@ export {
     IconGmail,
     IconFacebook,
     IconTwitter,
-    AlertSuccess
+    AlertSuccess,
+    AlertError
 };
