@@ -9,18 +9,18 @@ const onBtnPress = ()=>{
     alert('asdf')
 }
 
-export const PrimaryButton = ({title="",customeStyle={}})=>{
+export const PrimaryButton = (props)=>{
     return (
-        <TouchableOpacity onPress={onBtnPress} style={[style.btnPrimary, customeStyle]}>
-            <Text style={{ color:'white'}}>{title}</Text>
+        <TouchableOpacity onPress={onBtnPress} style={[style.btnPrimary, props.customeStyle]}>
+            <Text style={{ color:'white'}}>{props.title}</Text>
         </TouchableOpacity>
     )
 }
 
-export const SuccessButton = ({title="",customeStyle={}})=>{
+export const SuccessButton = (props)=>{
     return (
-        <TouchableOpacity onPress={onBtnPress} style={[style.btnSuccess, customeStyle]}>
-            <Text style={{ color:'white'}}>{title}</Text>
+        <TouchableOpacity onPress={props.onPress} style={[style.btnSuccess, props.customeStyle]}>
+            <Text style={{ color:'white'}}>{props.title}</Text>
         </TouchableOpacity>
     )
 }

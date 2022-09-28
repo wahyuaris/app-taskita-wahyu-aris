@@ -15,6 +15,10 @@ import {
     PrimaryButton
 } from '../../Componets'
 
+const onPress = ()=>{
+    alert('asdf')
+}
+
 export default RegisterErrorScreen = () =>{
     return(
         <SafeAreaView style={{flex:1}}>
@@ -32,7 +36,7 @@ export default RegisterErrorScreen = () =>{
                     <Text style={styles.textHeader}>Register Accout is Failed</Text>
                     <Text style={[styles.textBody,{marginTop:20}]}>Error Message ishere</Text>
                 </View>
-                <PrimaryButton title='BACK' customeStyle={styles.btnSuccess}/>
+                <PrimaryButton title='BACK' onPress={onPress} customeStyle={styles.btnSuccess}/>
 
             </LinearGradient>
         </SafeAreaView>
