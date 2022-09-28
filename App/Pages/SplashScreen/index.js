@@ -2,7 +2,13 @@ import * as React from 'react';
 import {View, Text, SafeAreaView, StyleSheet, Image, StatusBar} from 'react-native';
 import {IconSplash} from '../../assets';
 
-export default SplashScreen = () => {
+export default SplashScreen = ({navigation}) => {
+  React.useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('LoginScreen')
+     }, 3000)
+    }, [navigation]);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
