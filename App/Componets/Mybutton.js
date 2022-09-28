@@ -2,16 +2,12 @@ import * as React from 'react';
 import {
     Text, 
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
 } from 'react-native';
-
-const onBtnPress = ()=>{
-    alert('asdf')
-}
 
 export const PrimaryButton = (props)=>{
     return (
-        <TouchableOpacity onPress={onBtnPress} style={[style.btnPrimary, props.customeStyle]}>
+        <TouchableOpacity onPress={props.onPress} style={[style.btnPrimary, props.customeStyle]}>
             <Text style={{ color:'white'}}>{props.title}</Text>
         </TouchableOpacity>
     )
