@@ -6,14 +6,15 @@ import {
     Text,
     StatusBar,
     TextInput,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity
 } from 'react-native'
 
 import {
     PrimaryButton
 } from '../../Componets'
 
-export default RegisterScreen = ()=>{
+export default RegisterScreen = ({navigation})=>{
     return (
         <SafeAreaView style={{flex:1}}>
             <LinearGradient
@@ -36,7 +37,9 @@ export default RegisterScreen = ()=>{
 
                 <View style={styles.footherText}>
                     <Text style={styles.smallFootherText}>Already have an account?</Text>
-                    <Text style={styles.smallFootherTextRight}>Login here!</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate('LoginScreen')}>
+                        <Text style={styles.smallFootherTextRight}>Login here!</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.footherTextTwo}>
                     <Text style={styles.smallFootherText}>By signing up, you are agree with our </Text>

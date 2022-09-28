@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 
 export default Router = () => {
   return (
-    <Stack.Navigator initialRouteName="RegisterErrorScreen">
+    <Stack.Navigator initialRouteName="LoginScreen">
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen
         name="SplashScreen"

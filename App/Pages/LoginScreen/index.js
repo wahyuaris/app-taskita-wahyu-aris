@@ -7,7 +7,8 @@ import {
     StyleSheet,
     TextInput , 
     StatusBar, 
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 import {
     IconGmail,
@@ -19,7 +20,7 @@ import {
 } from '../../Componets'
 
 
-export default LoginScreen =  () => {
+export default LoginScreen =  ({navigation}) => {
 
     return (
         <SafeAreaView style={{ flex:1 }}>
@@ -51,7 +52,9 @@ export default LoginScreen =  () => {
 
                 <View style={styles.footherText}>
                     <Text style={styles.smallFootherText}>Don't have an account?</Text>
-                    <Text style={styles.smallFootherTextRight}>Create new now!</Text>
+                    <TouchableOpacity onPress={()=>navigation.navigate('RegisterScreen')}>
+                        <Text style={styles.smallFootherTextRight}>Create new now!</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.footherTextTwo}>
                     <Text style={styles.smallFootherText}>By signing up, you are agree with our </Text>
