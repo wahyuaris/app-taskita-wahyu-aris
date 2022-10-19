@@ -4,6 +4,9 @@ import LoginScreen from './LoginScreen';
 import RegisterScreen from './RegisterScreen';
 import RegisterSuccessScreen from './RegisterScreen/RegisterSuccessScreen'
 import RegisterErrorScreen from './RegisterScreen/RegisterErrorScreen'
+import TaskScreen from './TaskScreen';
+import ReportScreen from './ReportScreen';
+import SettingsScreen from './SettingsScreen';
 
 export {
     HomeScreen, 
@@ -11,5 +14,8 @@ export {
     LoginScreen,
     RegisterScreen,
     RegisterSuccessScreen,
-    RegisterErrorScreen
+    RegisterErrorScreen,
+    TaskScreen,
+    ReportScreen,
+    SettingsScreen
 };
