@@ -40,7 +40,7 @@ export default LoginScreen =  ({navigation}) => {
                 />
                 <TextInput style={styles.inputStyle} placeholder="Password"/>
 
-                <PrimaryButton customeStyle={styles.btnLoginStyle} title="LOGIN"/>
+                <PrimaryButton isLoading={true}  customeStyle={styles.btnLoginStyle} title="LOGIN"/>
 
                 <Text style={styles.smallText}>Forgot Password ?</Text>
                 <Text style={styles.smallTextCenter}>Or login with</Text>

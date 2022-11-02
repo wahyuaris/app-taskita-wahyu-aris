@@ -3,14 +3,24 @@ import {
     Text, 
     TouchableOpacity,
     StyleSheet,
+    View,
 } from 'react-native';
 
 export const PrimaryButton = (props)=>{
-    return (
-        <TouchableOpacity onPress={props.onPress} style={[style.btnPrimary, props.customeStyle]}>
-            <Text style={{ color:'white'}}>{props.title}</Text>
-        </TouchableOpacity>
-    )
+    if(props.isLoading){
+        return(
+            <View style={[style.btnPrimary, props.customeStyle]}>
+                <Text style={{ color:'white'}}>Loading...</Text>
+            </View>
+        )
+    }
+    if(!props.isLoading){
+        return (
+            <TouchableOpacity onPress={props.onPress} style={[style.btnPrimary, props.customeStyle]}>
+                <Text style={{ color:'white'}}>{props.title}</Text>
+            </TouchableOpacity>
+        )
+    }
 }
 
 export const SuccessButton = (props)=>{
