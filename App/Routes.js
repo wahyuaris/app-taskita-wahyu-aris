@@ -1,6 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomNavigator } from './Componets';
 import {
   HomeScreen, 
   SplashScreen, 
@@ -18,7 +19,7 @@ const Stack = createStackNavigator();
 
 const MainScreen = () => {
   return (
-      <Tab.Navigator>
+      <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Task" component={TaskScreen} />
           <Tab.Screen name="Report" component={ReportScreen} />
@@ -30,7 +31,7 @@ const MainScreen = () => {
 
 export default Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainScreen">
+    <Stack.Navigator initialRouteName="SplashScreen">
       <Stack.Screen name="MainScreen" component={MainScreen} options={{headerShown: false}} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false}} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}} />
