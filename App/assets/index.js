@@ -14,6 +14,7 @@ import IcTaskActive from './img/ic_task_active.png';
 import IcTaskInActive from './img/ic_task_nonactive.png';
 import IcSettingsActive from './img/ic_settings_active.png';
 import IcSettingsInActive from './img/ic_settings_nonactive.png';
+import ImgLoading from './img/loading.gif';
 
 export {
     IconSplash,
@@ -31,5 +32,6 @@ export {
     IcTaskActive,
     IcTaskInActive,
     IcSettingsActive,
-    IcSettingsInActive
+    IcSettingsInActive,
+    ImgLoading
 };

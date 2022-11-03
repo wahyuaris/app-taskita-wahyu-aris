@@ -4,13 +4,20 @@ import {
     TouchableOpacity,
     StyleSheet,
     View,
+    Image
 } from 'react-native';
+import {
+    ImgLoading
+} from '../assets'
 
 export const PrimaryButton = (props)=>{
     if(props.isLoading){
         return(
             <View style={[style.btnPrimary, props.customeStyle]}>
-                <Text style={{ color:'white'}}>Loading...</Text>
+                <View style={{ flexDirection:'row'}}>
+                    <Image source={ImgLoading} style={{width: 20, height:20, marginRight:15}}/> 
+                    <Text style={{ color:'white'}}>Loading...</Text>
+                </View>
             </View>
         )
     }
