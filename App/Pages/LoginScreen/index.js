@@ -41,7 +41,7 @@ export default LoginScreen =  ({navigation}) => {
                 'api-key': 'zYwAQaYVJ2hdF6WVlhy4gFM7i6IOGAcAJ5lips8IYEjIkXjoksjPpuTBZvGjt4uC'
             }
         }).then(res=>{
-            if(res.data.document.email != null ){
+            if(res.data.document != null ){
                 onError(false)
                 navigation.replace('MainScreen')
             }else{
