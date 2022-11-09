@@ -5,7 +5,7 @@ import {
   IconMail
 } from '../../assets'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../../reducer/CounterReducer'
+import { decrement, setNama } from '../../reducer/CounterReducer'
 
 const CardView = ()=>{
   return (
@@ -28,6 +28,7 @@ const CardView = ()=>{
 
 export default SettingsScreen = () => {
   const count = useSelector((state) => state.counter.value)
+  const nama = useSelector((state) => state.counter.nama)
   const dispatch = useDispatch()
   
   return (
@@ -36,9 +37,9 @@ export default SettingsScreen = () => {
       <CardView/>
 
       <Text>{count}</Text>
-
+      <Text>{nama}</Text>
       <Button
-        onPress={()=>dispatch(increment())}
+        onPress={()=>dispatch(setNama("Budi"))}
         title="Tambah"
         color="#841584"
         accessibilityLabel="Tambah"
