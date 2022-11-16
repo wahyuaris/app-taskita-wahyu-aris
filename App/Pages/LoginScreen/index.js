@@ -19,7 +19,8 @@ import {
 import {
     PrimaryButton
 } from '../../Componets'
-
+import { setId, setEmail, setNama } from '../../reducer/UserReducer'
+import { useDispatch } from 'react-redux'
 
 export default LoginScreen =  ({navigation}) => {
     const [email, onChangeEmail] = React.useState(null);
@@ -27,7 +28,8 @@ export default LoginScreen =  ({navigation}) => {
     const [IsLoading, onChangeLoading] = React.useState(false);
     const [isError, onError] = React.useState(false);
     const [message, onSetMessage] = React.useState(null);
-    
+    const dispatch = useDispatch()
+
     const onCheckLogin =()=>{
         onChangeLoading(true)
         onError(false)
@@ -43,6 +45,10 @@ export default LoginScreen =  ({navigation}) => {
         }).then(res=>{
             if(res.data.document != null ){
                 onError(false)
+                dispatch(setId(res.data.document._id))
+                dispatch(setNama(res.data.document.name))
+                dispatch(setEmail(res.data.document.email))
+
                 navigation.replace('MainScreen')
             }else{
                 onSetMessage('invalid username and password')

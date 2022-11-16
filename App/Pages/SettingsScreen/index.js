@@ -1,13 +1,19 @@
 import * as React from 'react';
-import {View, Text, Image, Button} from 'react-native';
+import {
+  View, 
+  Text, 
+  Image, 
+  StyleSheet
+} from 'react-native';
 import {
   IconLock,
   IconMail
 } from '../../assets'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, setNama } from '../../reducer/CounterReducer'
+import { resetState } from '../../reducer/UserReducer'
+import { PrimaryButton } from '../../Componets'
 
-const CardView = ()=>{
+const CardView = (props)=>{
   return (
     <View style={{
       flexDirection:"row", 
@@ -19,38 +25,45 @@ const CardView = ()=>{
           <Image source={IconMail} style={{width: 30, height: 30}}/>
       </View>
       <View style={{flex:5}}>
-        <Text style={{fontSize:16, fontWeight:"bold"}}>Account Name</Text>
-        <Text>nama</Text>
+        <Text style={{fontSize:16, fontWeight:"bold"}}>{props.title}</Text>
+        <Text>{props.value}</Text>
       </View>
     </View>
   )
 }
 
-export default SettingsScreen = () => {
-  const count = useSelector((state) => state.counter.value)
-  const nama = useSelector((state) => state.counter.nama)
+export default SettingsScreen = ({navigation}) => {
+  const id = useSelector((state) => state.user.id)
+  const nama = useSelector((state) => state.user.nama)
+  const email = useSelector((state) => state.user.email)
+  const [IsLoading, onChangeLoading] = React.useState(false);
   const dispatch = useDispatch()
   
+  const onSignOut =()=>{
+    onChangeLoading(true)
+    dispatch(resetState())
+    onChangeLoading(false)
+    navigation.navigate('LoginScreen')
+  }
+
   return (
     <View style={{flex: 1}}>
-      <CardView/>
-      <CardView/>
+      <CardView title="Id" value={id}/>
+      <CardView title="Account Name" value={nama}/>
+      <CardView title="Email"  value={email}/>
 
-      <Text>{count}</Text>
-      <Text>{nama}</Text>
-      <Button
-        onPress={()=>dispatch(setNama("Budi"))}
-        title="Tambah"
-        color="#841584"
-        accessibilityLabel="Tambah"
-      />
-
-      <Button
-        onPress={()=>dispatch(decrement())}
-        title="Kurang"
-        color="#841584"
-        accessibilityLabel="Kurang"
-      />
+      <PrimaryButton 
+          isLoading={IsLoading}  
+          customeStyle={styles.btnSignout} 
+          onPress={()=>onSignOut()}
+          title="Sign Out"/>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  btnSignout:{
+    margin:25,
+    marginTop:80
+  }
+})
