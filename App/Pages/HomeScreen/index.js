@@ -44,8 +44,8 @@ export default HomeScreen = () => {
       </View>
 
       <View style={{padding:15}}>
-        <Text style={{color:'white'}}>{displayMonth}</Text>
-        <View style={{marginTop:10, flexDirection:'row', justifyContent:'space-between', paddingLeft:50, paddingRight:50}}>
+        <Text style={{color:'white', textAlign: 'center', fontSize: 20}}>{displayMonth}</Text>
+        <View style={{marginTop:10, flexDirection:'row', justifyContent:'space-between', paddingLeft:15, paddingRight:15}}>
           <MiniCard 
             isActive={true} 
             day={hariSekarang}
@@ -64,9 +64,10 @@ export default HomeScreen = () => {
             
         </View>
       </View>
+      
       <View style={style.bodyContent}>
         <ScrollView style={{padding:30}}>
-          <Text>asdf</Text>
+          <Text></Text>
         </ScrollView>
       </View>
       
@@ -78,24 +79,24 @@ const style = StyleSheet.create({
   containerTop:{
     flexDirection:'row',
     justifyContent:'space-between',
-    padding:20,
-    marginTop:20
+    padding:15,
+    marginTop:5
   },
   textNameStyle:{
     fontWeight:'bold',
-    fontSize:30,
+    fontSize:20,
     color:'#A85CA3'
     
   },
   textWelcome:{
     color:'white',
     fontWeight:'bold',
-    fontSize:18,
+    fontSize:15,
   },
   bodyContent:{
     height:WINDOW_HEIGHT, 
     backgroundColor:'white',
-    borderTopRightRadius:50,
-    borderTopLeftRadius:50
+    borderTopRightRadius:40,
+    borderTopLeftRadius:40
   }
 })

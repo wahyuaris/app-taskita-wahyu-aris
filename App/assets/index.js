@@ -16,6 +16,11 @@ import IcSettingsActive from './img/ic_settings_active.png';
 import IcSettingsInActive from './img/ic_settings_nonactive.png';
 import ImgLoading from './img/loading.gif';
 import ICNotif from './img/notification.png';
+import IcPensil from './img/IcPensil.png';
+import IcTime from './img/IcTime.png';
+import IcDate from './img/IcDate.png';
+import IcTask from './img/IcTask.png';
+import IcCheck from './img/checkbox.png';
 
 export {
     IconSplash,
@@ -35,5 +40,10 @@ export {
     IcSettingsActive,
     IcSettingsInActive,
     ImgLoading,
-    ICNotif
+    ICNotif,
+    IcPensil,
+    IcTime,
+    IcDate,
+    IcTask,
+    IcCheck
 };

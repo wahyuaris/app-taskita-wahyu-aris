@@ -85,7 +85,7 @@ export default LoginScreen =  ({navigation}) => {
                 <Text style={styles.HeaderText}>Login</Text>
                 <Text style={styles.BodyText}>Please login to your account</Text>
                 <TextInput 
-                    style={[styles.inputStyle, {marginTop:80}]} 
+                    style={[styles.inputStyle, {marginTop:20}]} 
                     placeholder="Email"
                     value={email}
                     onChangeText={onChangeEmail}
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     },
     inputStyle:{
         height: 50,
-        marginTop: 12,
+        marginTop: 8,
         borderWidth: 1,
         paddingLeft:30,
         borderRadius:50,
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     smallTextCenter:{
         fontFamily:'Roboto-Light',
         fontSize:14,
-        marginTop:50,
+        marginTop:30,
         color:'white',
         textAlign:'center'
     },
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     footherText:{
         flexDirection:'row',
         justifyContent:'center',
-        marginTop:50
+        marginTop:20
     },
     smallFootherText:{
         fontFamily:'Roboto-Light',
@@ -204,6 +204,6 @@ const styles = StyleSheet.create({
     footherTextTwo:{
         flexDirection:'row',
         justifyContent:'center',
-        marginTop:20
+        marginTop:5
     }
 });
